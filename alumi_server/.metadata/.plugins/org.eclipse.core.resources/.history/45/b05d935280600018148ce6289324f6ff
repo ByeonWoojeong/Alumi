@@ -1,0 +1,80 @@
+package com.wecom.controller;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Produces;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.wecome.model.Article;
+import com.wecome.model.Greeting;
+import com.wecome.model.LoginRes;
+import com.wecome.model.User;
+import com.wecome.model.Users;
+
+@RestController
+public class AlumiController {
+	
+	private static final String template = "Hello, %s!";
+	private final AtomicLong counter = new AtomicLong();
+
+	private static Map<Integer, Article> DB = new HashMap<>();
+	
+    @RequestMapping("/greeting")
+    public Greeting greeting(
+    		@RequestParam(value="name", defaultValue="World") String name
+    		) {
+        return new Greeting(counter.incrementAndGet(), String.format(template, name));
+    }
+
+    @RequestMapping("/login")
+    public LoginRes login(
+    		@RequestParam(value="userId", defaultValue="") String name,
+    		@RequestParam(value="password", defaultValue="") String password
+    		) {
+    	
+    	LoginRes loginRes = new LoginRes();
+    	loginRes.setResult("ok");
+    	
+    	return loginRes;
+    }
+    
+    @RequestMapping("/users")
+    public Users getAllUsers() {
+        Users users = new Users();
+        users.setUsers(new ArrayList<>(DB.values()));
+        return users;
+    }    
+
+    @RequestMapping("/articles")
+    public ArrayList<User> getAllArticles() {
+    	ArrayList<User> articles = new ArrayList<>(DB.values());
+        return articles;
+    }    
+	
+    static
+    {
+    	Article article1 = new Article();
+    	article1.setTitle("title1");
+    	article1.setUserName("john");
+    	DB.put(1,  artlcle1);
+    	
+        User user1 = new User();
+        user1.setTitle("Title1");
+        user1.setUserName("John");
+ 
+        User user2 = new User();
+        user2.setTitle("Title2");
+        user2.setUserName("Tom");
+         
+        DB.put(1, user1);
+        DB.put(2, user2);
+    }
+    
+}

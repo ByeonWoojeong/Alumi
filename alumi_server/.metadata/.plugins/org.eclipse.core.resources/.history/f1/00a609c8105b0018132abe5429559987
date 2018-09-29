@@ -1,0 +1,22 @@
+package com.wecome.model;
+
+import java.io.Serializable;
+
+public class User implements Serializable {
+  
+    private static final long serialVersionUID = 1L;
+  
+    private int id;
+    private String title = "";
+    private String userName = "";
+        
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
+    
+}
