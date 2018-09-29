@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.apple.alumi.ArticlesAddActivity">
+
+
+    <!-- 키보드 입력시에 화면 조정을 위해 ScrollView.
+         manifests에서 adjustResize   -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <EditText
+                android:id="@+id/updateSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subject"  />
+
+            <EditText
+                android:id="@+id/updateDescription"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="Description"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/updateSubject"/>
+
+            <Button
+                android:id="@+id/btnUpdateImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHOOSE IMAGE"
+                android:layout_below="@id/updateDescription"/>
+
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SEND"
+                android:layout_below="@id/btnUpdateImage"
+                android:layout_centerHorizontal="true"
+                android:onClick="mOnClickUpdate"
+                android:layout_margin="30dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

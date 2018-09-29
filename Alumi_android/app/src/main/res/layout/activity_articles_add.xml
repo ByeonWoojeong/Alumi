@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.apple.alumi.ArticlesAddActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="mOnClickBackground"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/addSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Subject"  />
+
+        <EditText
+            android:id="@+id/addDescription"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text="Description"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/addSubject"/>
+
+        <Button
+            android:id="@+id/btnChooseImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="mOnClickChooseImage"
+            android:text="CHOOSE IMAGE"
+            android:layout_below="@id/addDescription"/>
+
+        <Button
+            android:id="@+id/btnCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="mOnClickCamera"
+            android:text="Camera"
+            android:layout_below="@id/btnChooseImage"/>
+
+        <ImageView
+            android:id="@+id/photo"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:layout_below="@id/btnCamera"/>
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEND"
+            android:layout_below="@id/photo"
+            android:layout_centerHorizontal="true"
+            android:onClick="mOnClickSendArticle"
+            android:layout_margin="30dp"/>
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.apple.alumi.MenuActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp">
+
+        <!-- 게시글 올리기 버튼 -->
+        <Button
+            android:id="@+id/btnAddArticles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ADD ARTICLES"
+            android:onClick="mOnClickAddArticles"
+            android:layout_margin="10dp"/>
+
+        <!-- 질문글 올리기 버튼 -->
+        <Button
+            android:id="@+id/btnAddQuestionPapers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ADD QUESTION PAPERS"
+            android:onClick="mOnClickAddQuestionPapers"
+            android:layout_margin="10dp"/>
+
+        <!-- 공지글 올리기 버튼 -->
+        <Button
+            android:id="@+id/btnSendNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SEND NOTIFICATION"
+            android:onClick="mOnClickSendNotification"
+            android:layout_margin="10dp"/>
+
+        <!-- 게시글 보기 버튼 -->
+        <Button
+            android:id="@+id/btnViewArticles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VIEW ARTICLES"
+            android:onClick="mOnClickViewArticles"
+            android:layout_margin="10dp"/>
+
+        <!-- 질문글 보기 버튼 -->
+        <Button
+            android:id="@+id/btnViewQuestionPapers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VIEW QUESTION PAPERS"
+            android:onClick="mOnClickViewQuestionPapers"
+            android:layout_margin="10dp"/>
+
+        <!-- 학부 보기 버튼 -->
+        <Button
+            android:id="@+id/btnViewFaculty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VIEW FACULTY"
+            android:onClick="mOnClickViewFaculty"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
